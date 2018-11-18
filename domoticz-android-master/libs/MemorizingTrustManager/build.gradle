@@ -1,0 +1,41 @@
+buildscript {
+	repositories {
+		jcenter()
+		mavenCentral()
+        google()
+    }
+	//noinspection GroovyAssignabilityCheck
+	dependencies {
+		classpath 'com.android.tools.build:gradle:3.2.0'
+	}
+}
+
+apply plugin: 'com.android.library'
+
+dependencies {
+	implementation "com.android.support:support-v4:25.3.1"
+}
+
+android {
+	compileSdkVersion 25
+	buildToolsVersion '28.0.2'
+	//noinspection GroovyAssignabilityCheck
+	defaultConfig {
+        minSdkVersion 9
+		targetSdkVersion 25
+	}
+
+	//noinspection GroovyAssignabilityCheck
+	sourceSets {
+		//noinspection GroovyAssignabilityCheck
+		main {
+			manifest.srcFile 'AndroidManifest.xml'
+			java.srcDirs = ['src']
+			resources.srcDirs = ['src']
+			aidl.srcDirs = ['src']
+			renderscript.srcDirs = ['src']
+			res.srcDirs = ['res']
+			assets.srcDirs = ['assets']
+		}
+	}
+}
